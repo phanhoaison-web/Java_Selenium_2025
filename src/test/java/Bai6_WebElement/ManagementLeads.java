@@ -2,9 +2,9 @@ package Bai6_WebElement;
 
 import Bai5_Locators.LocatorsCRM;
 import common.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+
+import java.util.List;
 
 public class ManagementLeads extends BaseTest {
 

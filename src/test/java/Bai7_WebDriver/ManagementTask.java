@@ -5,9 +5,13 @@ import Bai5_Locators.LocatorsCRM;
 import common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
-import java.security.Key;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class ManagementTask extends BaseTest {
 
@@ -46,7 +50,12 @@ public class ManagementTask extends BaseTest {
         Thread.sleep(1000);
         System.out.println("Verify header Add new Lead :" + "h4".equals(driver.findElement(By.xpath(LocatorsCRM.headerAddNewTask)).getTagName()));
 
-        driver.findElement(By.xpath(LocatorsCRM.taskCheckBoxPublic)).click();
+        WebElement checkBockPublic = driver.findElement(By.xpath(LocatorsCRM.taskCheckBoxPublic));
+        if(!checkBockPublic.isSelected()){
+
+        }checkBockPublic.click();
+
+//        driver.findElement(By.xpath(LocatorsCRM.taskCheckBoxPublic)).click();
 
         driver.findElement(By.xpath(LocatorsCRM.inputSubject)).clear();
         driver.findElement(By.xpath(LocatorsCRM.inputSubject)).sendKeys("HNJSC");
@@ -97,18 +106,23 @@ public class ManagementTask extends BaseTest {
         driver.findElement(By.xpath(LocatorsCRM.dropdownAssignees)).click();
 
         WebElement elementTag = driver.findElement(By.xpath(LocatorsCRM.taskDropdownTags));
+//        Select select = new Select(elementTag);
+//        Thread.sleep(1000);
+//        select.selectByVisibleText("Selenium");
+//        Thread.sleep(1000);
+//        System.out.println(select.getFirstSelectedOption().getText());
         elementTag.click();
         elementTag.clear();
         Thread.sleep(1000);
         elementTag.sendKeys("JSC_NEW");
-//
+
 //        driver.findElement(By.xpath(LocatorsCRM.clickTaskDescription)).click();
 //        driver.findElement(By.xpath(LocatorsCRM.inputTaskDescription)).clear();
 //        driver.findElement(By.xpath(LocatorsCRM.inputTaskDescription)).sendKeys("Test thêm mới new Task");
 
         Thread.sleep(3000);
 
-        driver.findElement(By.xpath(LocatorsCRM.btnSaveTask)).click();
+//        driver.findElement(By.xpath(LocatorsCRM.btnSaveTask)).click();
         Thread.sleep(3000);
 
         System.out.println("Verify add new Lead success :" + driver.findElement(By.xpath(LocatorsCRM.headerNewTaskSuccess)).getText());
@@ -117,7 +131,7 @@ public class ManagementTask extends BaseTest {
 
     public static void main(String[] args) throws Exception{
         createdDriver();
-        testOpenMenuTask();
+//        testOpenMenuTask();
         testAddNewTask();
     }
 }
