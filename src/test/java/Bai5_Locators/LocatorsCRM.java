@@ -111,4 +111,36 @@ public class LocatorsCRM {
     public static String inputTaskDescription = "//p[normalize-space()='Task Description']/following::iframe[@id='description_ifr']";
 
 
+    //add customer
+    public static String menuCustomer = "//span[normalize-space()='Customers' and @class='menu-text']";
+    public static String addNewCustomer = "//a[contains(@href,'https://crm.anhtester.com/admin/clients/client') and normalize-space()='New Customer']";
+    public static String btnSaveCustomer = "//div[@id='profile-save-section']/button[normalize-space()='Save']";
+    public static String inputSearchCustomer = "//div[@id='clients_filter']//input[@type='search']";
+    public static String totalCustomers = "//span[normalize-space()='Total Customers']/preceding-sibling::span";
+
+    public static String inputCompanyC = "//input[@id='company']";
+    public static String inputVATC = "//input[@id='vat']";
+    public static String inputPhoneC = "//input[@id='phonenumber']";
+    public static String inputWebsiteC = "//input[@id='website']";
+    public static String dropdownGroups = "//button[contains(@data-id,'groups_in')]";
+    public static String inputSearchGroups = "//button[contains(@data-id,'groups_in')]/following-sibling::div//input[@type='search']";
+
+    public static String dropdownCurrency = "//button[contains(@data-id,'default_currency')]";
+    public static String inputSearchCurrency = "//button[contains(@data-id,'default_currency')]/following-sibling::div//input[@type='search']";
+
+    public static String dropdownLanguage = "//button[contains(@data-id,'default_language')]";
+
+    public static String inputSearchOption(String optionValue){
+        String xpath = String.format("//span[normalize-space()='%s']",optionValue);
+        return xpath;
+    }
+
+    public static String inputAddresC = "//textarea[@id='address']";
+    public static String inputCityC = "//input[@id='city']";
+    public static String inputStateC = "//input[@id='state']";
+    public static String inputZipcode = "//input[@id='zip']";
+
+    public static String dropdownCountryC = "//button[contains(@data-id,'country')]";
+    public static String inputSearchCountryC = "//button[contains(@data-id,'country')]/following-sibling::div//input[@type='search']";
+    public static String firstRowCustomerTable = "//table[@id='clients']/tbody/tr[1]/td[3]/a";
 }
